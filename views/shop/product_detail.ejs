@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/product_detail.css">
+</head>
+
+<body>
+
+    <!-- navigation section here  -->
+
+    <%- include('../includes/navigation.ejs') %>
+
+    <!-- product section start here  -->
+    <section id="detail">
+
+        <div class="prod_detail_img">
+            <div class="img">
+                <img class="detail_img" src="<%=  prod.imgUrl %>" alt="">
+            </div>
+        </div>
+
+        <div class="prod_detail_desc">
+
+            <h1><%= prod.title %></h1>
+            <p class="detail"><%= prod.description%></p>
+
+            <h2>Price - <%= prod.price %> </h2>
+            <% if (isAuthenticated) { %>
+            <a href="#" class="card-btn">Add To Cart</a>
+            <% } %>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <%- include('../includes/end.ejs') %>

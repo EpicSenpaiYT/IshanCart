@@ -1,0 +1,52 @@
+
+
+form{
+    top: 70px;
+    position:relative;
+    border: 5px solid black;
+    width: 45%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    height: 430px;
+    border-radius: 25px;
+    background-color: cadetblue;
+    padding: 10px 10px;
+}
+
+
+form div {
+    margin: 20px 0px;
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+form div label {
+    width: 25%;
+    /* border: 2px solid blue; */
+    padding: 5px 5px;
+    font-size: 25px;
+}
+
+form div input {
+    font-size: 25px;
+    width: 70%;
+    /* border: 2px solid blue; */
+}
+
+form div textarea {
+    width: 70%;
+    font-size: 15px;
+}
+
+
+.submit{
+    /* border: 5px solid green; */
+    width: 30%;
+
+}

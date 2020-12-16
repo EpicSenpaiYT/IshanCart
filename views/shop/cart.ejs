@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+</head>
+
+<body>
+
+    <!-- navigation section here  -->
+
+    <%- include('../includes/navigation.ejs') %>
+
+    <!-- product section start here  -->
+
+    <section id="cart_products">
+
+        <% if (cart_items.length > 0 ) {  %>
+
+            <%  for ( let item of cart_items) { %>
+
+                <div class="cart-item">
+                    <h2 class="cart-title"><%=  item.productId.title %> </h2>
+                    <div class="cart-img">
+                        <img src=" <%=  item.productId.imgUrl %> " alt="">
+                    </div>
+
+                    <h2 class="quantity">
+                        <%= item.quantity %>
+                    </h2>
+
+                    <h2 class="price"> <%= item.productId.price %> </h2>
+                    <a class="cart-delete" style="text-decoration: none;" href="cart/delete/<%= item._id %>"> Delete </a>
+                </div>
+
+            <%   } %>
+
+        <% } else { %>
+            <h1>No Item Added in the Card </h1>
+        <% } %>
+
+    </section>
+
+
+
+    <%- include('../includes/end.ejs') %>

@@ -1,0 +1,45 @@
+<%- include('../includes/head.ejs') %>
+
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+    <!-- navigation section here  -->
+    <%- include('../includes/navigation.ejs') %>
+    <!-- navigation end here  -->
+    <section id="all_products">
+
+
+        <% if (prod.length > 0) { %>
+
+        <% for ( item of prod) { %>
+
+        <div class="card">
+            <h2 class="card-title"><%= item.title %></h2>
+            <img class="card-img" src="<%= item.imgUrl %>" alt="">
+            <h3 class="card-price">Price - <%= item.price %> </h3>
+            <a href="admin/edit-product/<%= item._id  %>" class="card-btn">Edit</a>
+            <!-- <a href=""><></a> -->
+            <!-- <%= item._id %> -->
+            <a href="admin/delete/<%=item._id %>" class="card-btn" style="margin-top: 5px;">Delete</a>
+        </div>
+
+
+        <% } %>
+
+        <%} else { %>
+        <h1> No Product Available </h1>
+        <% } %>
+
+
+
+
+
+
+
+    </section>
+
+    <%- include('../includes/end.ejs') %>

@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+
+    <!-- navigation section here  -->
+
+    <%- include('../includes/navigation.ejs') %>
+
+    <!-- product section start here  -->
+
+    <section id="all_products">
+
+
+        <% if (prod.length > 0) { %>
+
+        <% for ( item of prod) { %>
+
+        <div class="card">
+            <h2 class="card-title"><%= item.title %></h2>
+            <img class="card-img" src="<%= item.imgUrl %>" alt="">
+            <h3 class="card-price">Price - <%= item .price %> </h3>
+
+            <% if (isAuthenticated) { %>
+                 <a href="/add_to_cart/<%= item._id %>" class="card-btn">Add To Cart</a>
+            <% } %>
+
+            <a href="/detail/<%= item._id %>" class="card-btn">Detail</a>
+        </div>
+
+
+        <% } %>
+
+        <%} else { %>
+        <h1> No Product Available </h1>
+        <% } %>
+
+    </section>
+
+
+
+    <%- include('../includes/end.ejs') %>

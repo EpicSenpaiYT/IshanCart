@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <ul id="nav-list">
+
+        <% if ( isAuthenticated ) { %>
+        <li class="items"> <a> Hi <%= user_name %> </a> </li>
+        <% } %>
+
+
+
+        <li class="items"><a href="/">My Shop</a></li>
+
+
+        <% if ( isAuthenticated ) { %>
+        <% if ( !role) { %>
+
+        <li class="items"><a href="/cart">Cart</a></li>
+
+        <% } %>
+        <% } %>
+
+        <% if ( isAuthenticated ) { %>
+
+            <% if ( role ) { %>
+
+                <li class="items"><a href="/admin/add-product">Add Products</a></li>
+                <li class="items"><a href="/admin">Admin</a></li>
+
+            <% } %>
+        <li class="items"><a href="/logout">Logout</a></li>
+        <% } %>
+
+        <% if ( !isAuthenticated ) { %>
+
+        <li class="items"><a href="/login">Login</a></li>
+        <li class="items"><a href="/signup">SignUp</a></li>
+
+        <% } %>
+
+    </ul>
+</nav>
